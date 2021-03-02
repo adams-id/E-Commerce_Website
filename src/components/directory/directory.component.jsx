@@ -2,7 +2,7 @@ import React from 'react';
 import './directory.styles.scss';
 import MenuItem from '../menu-item/menu-item.component';
 
-class Directory extends React.Component {
+class Directory extends React.Component { //We needed to use this because we needed access to State
     constructor(){
         super();
         this.state = {
@@ -48,7 +48,7 @@ class Directory extends React.Component {
                     <MenuItem key={id} {...otherSectionProps}/>
             ))}
             </div>
-        );
+        ); //The ...otherSectionProps technique is a way to state that we want to destructure the "sections" array and use all the properties in it
     }
 }
 

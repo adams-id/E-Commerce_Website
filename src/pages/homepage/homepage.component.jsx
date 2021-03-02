@@ -7,6 +7,6 @@ const HomePage = () => (
     <div className='homepage'>
         <Directory />
     </div>
-);
+); //Function stating what should happen when the HomePage variable is called.
 
 export default HomePage;
