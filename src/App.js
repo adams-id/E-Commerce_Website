@@ -20,10 +20,10 @@ class App extends React.Component{
 
 
   componentDidMount(){
-    this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth => { //used to integrate firebase and remember the current state of the user
       if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
-        userRef.onSnapshot(snapShot => {
+        const userRef = await createUserProfileDocument(userAuth); //user created in the firebase db
+        userRef.onSnapshot(snapShot => { //remeber the activities of the current user
           this.setState(
             {
               currentUser: {

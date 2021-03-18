@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-const config = {
+const config = { //gotten from the project setup at firebase
     apiKey: "AIzaSyA0im6TP4t-F-2O7gqd9e1h0v2CavrifUA",
     authDomain: "crwn-db-f11ae.firebaseapp.com",
     projectId: "crwn-db-f11ae",
@@ -12,8 +12,8 @@ const config = {
     measurementId: "G-1N9JFJ1DW8"
 };
 
-export const createUserProfileDocument = async (userAuth, additionalData) => {
-    if(!userAuth) return;
+export const createUserProfileDocument = async (userAuth, additionalData) => { //user document created for the firestore db
+    if(!userAuth) return; //if userAuth is false, return
 
     const userRef = firestore.doc(`users/${userAuth.uid}`);
     const snapShot = await userRef.get();

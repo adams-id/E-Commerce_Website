@@ -8,7 +8,7 @@ class SignIn extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {
+        this.state = { //data required from the user to be input
             email: '',
             password: '',
         }
@@ -17,25 +17,23 @@ class SignIn extends React.Component{
     handleSubmit = async event => {
         event.preventDefault();
 
-        const {email, password} = this.state;
+        const {email, password} = this.state; //destruture from this.state above so it can be used in this method.
         try {
             await auth.signInWithEmailAndPassword(email, password);
             this.setState({ email: '', password: ''});
         } catch (error) {
             console.log(error);
         };
-
-        this.setState({email:'', password: ''})
-
-    }
+        this.setState({email:'', password: ''}); //go back to original state after signing in
+    };
 
     handleChange = event => {
         const{value,name} = event.target;
-        this.setState ({[name]: value})
-    }
+        this.setState ({[name]: value});
+    };
 
     render(){
-        return(
+        return( //integrating Google Sign In too with the second Custom Button
             <div className='sign-in'>
                 <h2> I already have an account</h2>
                 <span> Sign in with your email and password</span>
@@ -46,13 +44,11 @@ class SignIn extends React.Component{
                     <div className='buttons'>
                         <CustomButton type='submit'>Sign In</CustomButton>
                         <CustomButton onClick={signInWithGoogle} isGoogleSignIn> 
-                          Sign in with Google
+                          Sign in with Google 
                         </CustomButton>
-                    </div>
-                    
-
-                </form>
-            </div>
+                    </div> 
+                </form> 
+            </div> //form requirements. type is the actual object that jsx allows to show the kind of input data we want
         );
     }
 }
