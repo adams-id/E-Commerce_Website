@@ -4,4 +4,5 @@ This project entails an E-Commerce application built with React, Redux & Firebas
 
 Hooks and GraphQL is a later part of the project and would be updated according.
 
-Testing is done using the Jest Library.
+
+Performance Testing is done using the Jest Library.
