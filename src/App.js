@@ -10,7 +10,7 @@ import shopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import SignInAndSignOut from './pages/sign-in-sign-out-page/sign-in-sign-out-page.component';
 import CheckoutPage from './pages/checkout/checkout.component';
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument} from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.action'; 
 import { selectCurrentUser } from './redux/user/user.selector';
 
