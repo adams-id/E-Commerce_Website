@@ -1,18 +1,22 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom'; //allows us access to the history and match attributes from react-router
-import './menu-items.styles.scss';
+import { withRouter } from 'react-router-dom';
 
-const MenuItem = ({title, imageUrl, size, history, linkUrl, match}) => (
-    <div className={`${size} menu-item`} onClick = {() => history.push(`${match.url}${linkUrl}`)}> {/*The onClick here
-    dynamically generates the url for the desired page when the user clicks the link */}
-    <div className='background-image' style={{
-        backgroundImage: `url(${imageUrl})`
-    }}/>
-        <div className='content'>
-            <h1 className='title'> {title.toUpperCase()}</h1> {/*Gets the title value and converts it to capital letter*/}
-            <span className='subtitle'>SHOP NOW</span>
-        </div>
-    </div>
+import { MenuItemContainer, BackgroundImageContainer, ContentContainer, ContentTitle, ContentSubtitle } from './menu-item.styles';
+
+const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
+  <MenuItemContainer
+    size={size}
+    onClick={() => history.push(`${match.url}${linkUrl}`)}
+  >
+    <BackgroundImageContainer
+      className='background-image'
+      imageUrl={imageUrl}
+    />
+    <ContentContainer className='content'>
+      <ContentTitle>{title.toUpperCase()}</ContentTitle>
+      <ContentSubtitle>SHOP NOW</ContentSubtitle>
+    </ContentContainer>
+  </MenuItemContainer>
 );
 
 export default withRouter(MenuItem);
