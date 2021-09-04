@@ -4,3 +4,5 @@ This project entails an E-Commerce application built with React, Redux & Firebas
 Hooks and GraphQL is a later part of the project and would be updated according.
 
 Performance Testing is done using the Jest Library.
+
+Here is a [link](https://crwn-shoponline.herokuapp.com/) to the live project.
